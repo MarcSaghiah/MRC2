@@ -4,13 +4,13 @@
 
 ## Requirements
 
-* Python ≥ 3.8
+* Python ≥ 3.10
 * Python packages: pandas, numpy, nibabel, medpy, joblib, lightgbm
 * External software:
   * dcm2niix (DICOM → NIfTI conversion)
   * hd-bet (brain extraction / brain mask)
 * Pre-trained contrast prediction model:  
-  `models/model7_lgbm_full_pipeline_dicom_qc_metrics_no_categorical.pkl`  
+  `prediction_models/model7_lgbm_full_pipeline_dicom_qc_metrics_no_categorical.pkl`  
   You may replace this model with another compatible one if available.
 
 Make sure that **dcm2niix** and **hd-bet** are accessible from your system PATH.
@@ -20,7 +20,7 @@ Make sure that **dcm2niix** and **hd-bet** are accessible from your system PATH.
 ### Run the pipeline on a single image or a folder
 
 ```bash
-python mrc2.py --input <image_or_folder_path> --output <output_csv_path>
+python mrqcnet.py --input <image_or_folder_path> --output <output_csv_path>
 ```
 
 * `<image_or_folder_path>` : path to a NIfTI image, a DICOM image, or a folder containing multiple images.
